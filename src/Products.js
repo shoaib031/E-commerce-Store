@@ -1,8 +1,33 @@
-import React from "react";
-import styled from "styled-components";
+// Products.js
+
+import React from 'react';
+import styled from 'styled-components';
+import FilterSection from './components/FilterSection';
+import ProductList from './components/ProductList';
+import Sort from './components/Sort';
+import { FilterContextProvider, useFilterContext } from './context/Filter_contex';
 
 const Products = () => {
-  return <Wrapper></Wrapper>;
+  return (
+    <FilterContextProvider>
+      <Wrapper>
+        <div className="container grid grid-filter-column">
+          <div>
+            <FilterSection />
+          </div>
+
+          <section className="product-view--sort">
+            <div className="sort-filter">
+              <Sort />
+            </div>
+            <div className="main-product">
+              <ProductList />
+            </div>
+          </section>
+        </div>
+      </Wrapper>
+    </FilterContextProvider>
+  );
 };
 
 const Wrapper = styled.section`

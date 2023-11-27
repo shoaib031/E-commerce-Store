@@ -122,7 +122,6 @@ const Nav = () => {
         visibility: hidden;
         opacity: 0;
         transform: translateX(100%);
-        /* transform-origin: top; */
         transition: all 3s linear;
       }
 
@@ -205,7 +204,6 @@ const Nav = () => {
           </li>
         </ul>
 
-        {/* two button for open and close of menu */}
         <div className="mobile-navbar-btn">
           <CgMenu
             name="menu-outline"

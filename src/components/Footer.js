@@ -26,8 +26,8 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Shoaib Siddiqui</h3>
-              <p>Delivering freshness to your doorstep - because every meal begins with quality ingredients. Your trusted source for top-notch groceries.</p>
+              <h3>Thapa Technical</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
@@ -41,9 +41,6 @@ const Footer = () => {
               <h3>Follow Us</h3>
               <div className="footer-social--icons">
                 <div>
-                  <a
-                    href="https://www.geeksvisor.com/" target="_blank">
-                  </a>
                   <FaDiscord className="icons" />
                 </div>
                 <div>
@@ -51,7 +48,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <a
-                    href="https://www.youtube.com/@GeeksVisor"
+                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
                     target="_blank">
                     <FaYoutube className="icons" />
                   </a>
@@ -60,7 +57,7 @@ const Footer = () => {
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+0311-2759798</h3>
+              <h3>+91 12345678978</h3>
             </div>
           </div>
 
@@ -68,7 +65,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} ShoaibSiddiqui. All Rights Reserved
+                @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
               </p>
               <div>
                 <p>PRIVACY POLICY</p>
@@ -86,6 +83,7 @@ const Wrapper = styled.section`
   .iSIFGq {
     margin: 0;
   }
+
   .contact-short {
     max-width: 60vw;
     margin: auto;
@@ -94,11 +92,13 @@ const Wrapper = styled.section`
     border-radius: 1rem;
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
     transform: translateY(50%);
+
     .grid div:last-child {
       justify-self: end;
       align-self: center;
     }
   }
+
   footer {
     padding: 14rem 0 9rem 0;
     background-color: ${({ theme }) => theme.colors.footer_bg};
@@ -112,10 +112,12 @@ const Wrapper = styled.section`
     .footer-social--icons {
       display: flex;
       gap: 2rem;
+
       div {
         padding: 1rem;
         border-radius: 50%;
         border: 2px solid ${({ theme }) => theme.colors.white};
+
         .icons {
           color: ${({ theme }) => theme.colors.white};
           font-size: 2.4rem;
@@ -125,27 +127,33 @@ const Wrapper = styled.section`
       }
     }
   }
+
   .footer-bottom--section {
     padding-top: 9rem;
+
     hr {
       margin-bottom: 2rem;
       color: ${({ theme }) => theme.colors.hr};
       height: 0.1px;
     }
   }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .contact-short {
       max-width: 80vw;
       margin: 4.8rem auto;
       transform: translateY(0%);
       text-align: center;
+
       .grid div:last-child {
         justify-self: center;
       }
     }
+
     footer {
       padding: 9rem 0 9rem 0;
     }
+
     .footer-bottom--section {
       padding-top: 4.8rem;
     }

@@ -21,7 +21,6 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
           );
         })}
       </div>
-      {/* 2nd column  */}
 
       <div className="main-screen">
         <img src={mainImage.url} alt={mainImage.filename} />
@@ -41,7 +40,6 @@ const Wrapper = styled.section`
     align-items: center;
     width: 100%;
     gap: 1rem;
-    /* order: 2; */
 
     img {
       max-width: 100%;

@@ -8,7 +8,8 @@ import { Container } from "./styles/Container";
 import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
-import Star from "./components/Stas";
+import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -44,13 +45,16 @@ const SingleProduct = () => {
       <PageNavigation title={name} />
       <Container className="container">
         <div className="grid grid-two-column">
+          {/* product Images  */}
           <div className="product_images">
             <MyImage imgs={image} />
           </div>
 
+          {/* product dAta  */}
           <div className="product-data">
             <h2>{name}</h2>
-            <Star stars={stars} review={ reviews } />
+            <Star stars={stars} reviews={reviews} />
+
             <p className="product-data-price">
               MRP:
               <del>
@@ -95,6 +99,8 @@ const SingleProduct = () => {
                 Brand :<span> {company} </span>
               </p>
             </div>
+            <hr />
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
       </Container>
@@ -164,7 +170,6 @@ const Wrapper = styled.section`
     hr {
       max-width: 100%;
       width: 90%;
-      /* height: 0.2rem; */
       border: 0.1rem solid #000;
       color: red;
     }
