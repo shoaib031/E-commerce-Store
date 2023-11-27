@@ -10,7 +10,7 @@ const initialState = {
   grid_view: true,
   sorting_value: 'lowest',
   filters: {
-    text: '',
+    text: "",
   },
 };
 
