@@ -3,13 +3,49 @@ import styled from 'styled-components';
 import { useFilterContext } from '../context/Filter_contex';
 
 const FilterSection = () => {
-  const { filters: { text }, updateFilterValue } = useFilterContext();
+  const { filters: { text, category }, all_products, updateFilterValue } = useFilterContext();
+
+  const getUniqueData = (data, property) => {
+    let newVal = data.map((curElem) => {
+      return curElem[property];
+    });
+    newVal = [...new Set(newVal)];
+    console.log(newVal);
+    return newVal;
+  };
+
+  const categoryOnlyData = getUniqueData(all_products, "category");
+  const companyOnlyData = getUniqueData(all_products, "company");
+  const colorsData = getUniqueData(all_products, "colors");
 
   return (
     <Wrapper>
       <div className='filter-search'>
         <form onSubmit={(e) => e.preventDefault()}>
-          <input type='text' name='text' value={text} onChange={updateFilterValue} />
+          <input type='text' name='text' value={text} onChange={updateFilterValue} placeholder='SEARCH' />
+        </form>
+      </div>
+      <div className='filter-category'>
+        <h3>Category</h3>
+        <div>{categoryOnlyData.map((curElem, index) => {
+          return <button key={index} type='button' name='category' value={curElem} onClick={updateFilterValue}>
+            {curElem}
+          </button>
+
+        })}</div>
+      </div>
+
+      <div className='filter-company'>
+        <h3>Company</h3>
+        <form action='#'>
+          <select name='company' id='company' className='filter-company--select' onClick={updateFilterValue}>
+            {
+              companyOnlyData.map((curElem, index) => {
+                return (
+                  <option key={index} value={curElem} name="company">{curElem}</option>
+                )
+              })}
+          </select>
         </form>
       </div>
     </Wrapper>
